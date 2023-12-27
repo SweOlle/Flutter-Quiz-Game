@@ -1,6 +1,6 @@
 {
-    "name": "flutter_quiz_game",
-    "short_name": "flutter_quiz_game",
+    "name": "fluttergame",
+    "short_name": "fluttergame",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
