@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'dart:math';
+import 'charades_words.dart';
 
 class CharadesPage extends StatefulWidget {
   @override
@@ -39,8 +41,8 @@ class _CharadesPageState extends State<CharadesPage> {
 
   String _getRandomWord() {
     // Replace this with your logic to fetch a random word
-    // For example, you can have a list of words and randomly select one
-    return 'RandomWord'; // Replace 'RandomWord' with your generated word
+    final randomIndex = Random().nextInt(charadesWordsEng.length);
+    return charadesWordsEng[randomIndex];
   }
 
   void _showResultDialog() {

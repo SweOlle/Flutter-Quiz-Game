@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 CustomButton(
-                  buttonText: 'Charades Quiz',
+                  buttonText: 'Charades',
                   onPressed: () {
                     Navigator.push(
                       context,
