@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'truth_or_dare_words.dart';
+
 class TruthOrDarePage extends StatefulWidget {
   @override
   _TruthOrDarePageState createState() => _TruthOrDarePageState();
 }
 
 class _TruthOrDarePageState extends State<TruthOrDarePage> {
-  List<String> truths = [
-    'What is your biggest fear?',
-    'What is your most embarrassing moment?',
-    'Have you ever cheated on a test?',
-    // Add more truths as needed
-  ];
+  List<String> truths = truthsEng;
 
-  List<String> dares = [
-    'Sing a song in front of everyone.',
-    'Do 10 jumping jacks.',
-    'Tell a joke to make everyone laugh.',
-    // Add more dares as needed
-  ];
+  List<String> dares = daresEng;
 
   String _currentTask = 'Tap to get Truth or Dare';
 
