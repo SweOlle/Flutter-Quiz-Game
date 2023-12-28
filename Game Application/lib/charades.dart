@@ -9,22 +9,40 @@ class CharadesPage extends StatefulWidget {
 }
 
 class _CharadesPageState extends State<CharadesPage> {
-  late Timer _timer;
+  Timer? _timer;
   int _secondsRemaining = 0;
   String _currentWord = 'Tap to start';
   int _points = 0;
   bool _showGenerateButton = true;
   bool _showGameButtons = false;
+  bool _mounted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _mounted = true;
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _mounted = false;
+    super.dispose();
+  }
 
   void _startTimer(int seconds) {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_secondsRemaining == 0) {
-        _timer.cancel();
-        _showResultDialog();
+        timer.cancel();
+        if (_mounted) {
+          _showResultDialog();
+        }
       } else {
-        setState(() {
-          _secondsRemaining--;
-        });
+        if (_mounted) {
+          setState(() {
+            _secondsRemaining--;
+          });
+        }
       }
     });
   }
@@ -92,13 +110,8 @@ class _CharadesPageState extends State<CharadesPage> {
       _showGenerateButton = true;
       _showGameButtons = false;
       _currentWord = 'Tap to start';
+      _timer?.cancel();
     });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
   }
 
   @override
@@ -107,55 +120,83 @@ class _CharadesPageState extends State<CharadesPage> {
       appBar: AppBar(
         title: Text('Charades'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '$_currentWord',
-              style: TextStyle(fontSize: 24.0),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Center(
+              child: Text(
+                '$_currentWord',
+                style: TextStyle(fontSize: 46.0),
+                textAlign: TextAlign.center,
+              ),
             ),
-            SizedBox(height: 20.0),
-            _showGenerateButton
-                ? ElevatedButton(
+          ),
+          _showGenerateButton
+              ? Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: ElevatedButton(
                     onPressed: () {
                       _generateWord();
                     },
-                    child: Text('Start'),
-                  )
-                : SizedBox(), // Only show the button if _showGenerateButton is true
-            _showGameButtons
-                ? Column(
-                    children: [
-                      SizedBox(height: 20.0),
-                      Text(
-                        'Time remaining: $_secondsRemaining seconds',
-                        style: TextStyle(fontSize: 18.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        'Start',
+                        style: TextStyle(fontSize: 20.0),
                       ),
-                      SizedBox(height: 20.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              _skipWord();
-                            },
-                            child: Text('Skip'),
+                    ),
+                  ),
+                )
+              : SizedBox(), // Only show the button if _showGenerateButton is true
+          _showGameButtons
+              ? Column(
+                  children: [
+                    Text(
+                      'Time remaining: $_secondsRemaining seconds',
+                      style: TextStyle(fontSize: 28.0),
+                    ),
+                    SizedBox(height: 20.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            _skipWord();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.red,
                           ),
-                          SizedBox(width: 20.0),
-                          ElevatedButton(
-                            onPressed: () {
-                              _addPointAndSkipWord();
-                            },
-                            child: Text('Add Point & Skip'),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              'Skip',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
                           ),
-                        ],
-                      ),
-                    ],
-                  )
-                : SizedBox(),
-          ],
-        ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            _addPointAndSkipWord();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.green,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              'Correct',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              : SizedBox(),
+          SizedBox(height: 20.0),
+        ],
       ),
     );
   }
