@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'charades_words.dart';
+import 'charades_data.dart';
 
 class CharadesPage extends StatefulWidget {
   @override

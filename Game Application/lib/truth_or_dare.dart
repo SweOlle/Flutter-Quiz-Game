@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'truth_or_dare_words.dart';
+import 'truth_or_dare_data.dart';
 
 class TruthOrDarePage extends StatefulWidget {
   @override
@@ -37,6 +37,7 @@ class _TruthOrDarePageState extends State<TruthOrDarePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Truth or Dare'),
         backgroundColor: Colors.deepPurple[300],
       ),
       backgroundColor: Colors.deepPurple[300],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'trivia_questions.dart';
+import 'trivia_data.dart';
 
 class TriviaPage extends StatefulWidget {
   @override
