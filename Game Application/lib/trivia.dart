@@ -41,7 +41,6 @@ class _TriviaPageState extends State<TriviaPage> {
 
   void _showQuestion(BuildContext context) {
     if (currentQuestionIndex < questions.length) {
-      List<String> options = questions[currentQuestionIndex].options;
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -278,16 +277,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Question ${widget.questionNumber}'),
+        backgroundColor: Colors.deepPurple[300],
       ),
+      backgroundColor: Colors.deepPurple[300],
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
               widget.questionText,
               style: TextStyle(fontSize: 26),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 200),
             Column(
               children: widget.options.map((option) {
                 return Column(
