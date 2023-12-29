@@ -121,6 +121,7 @@ class _CharadesPageState extends State<CharadesPage> {
         title: Text('Charades'),
         backgroundColor: Colors.deepPurple[300],
       ),
+      backgroundColor: Colors.deepPurple[300],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

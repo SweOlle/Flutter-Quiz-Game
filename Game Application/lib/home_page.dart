@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 CustomButton(
-                  buttonText: 'Would you rather?',
+                  buttonText: 'Would You Rather?',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 CustomButton(
-                  buttonText: 'Most likely to',
+                  buttonText: 'Most Likely To',
                   onPressed: () {
                     Navigator.push(
                       context,

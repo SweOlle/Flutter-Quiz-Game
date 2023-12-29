@@ -9,20 +9,16 @@ class MostLikelyToPage extends StatefulWidget {
 
 class _MostLikelyToPageState extends State<MostLikelyToPage> {
   String _currentSentence = 'Tap to start';
-  int _points = 0;
   bool _showGenerateButton = true;
   bool _showGameButtons = false;
-  bool _mounted = false;
 
   @override
   void initState() {
     super.initState();
-    _mounted = true;
   }
 
   @override
   void dispose() {
-    _mounted = false;
     super.dispose();
   }
 
