@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'trivia.dart';
 import 'charades.dart';
 import 'truth_or_dare.dart';
-import 'two_truths_one_lie.dart';
-import 'emoji_quiz.dart';
+import 'would_you_rather.dart';
+import 'most_likely_to.dart';
 
-import 'trivia_questions.dart';
+import 'trivia_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -67,21 +67,22 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 CustomButton(
-                  buttonText: 'Two Truths, One Lie',
+                  buttonText: 'Would you rather?',
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TwoTruthsOneLie()),
+                          builder: (context) => WouldYouRatherPage()),
                     );
                   },
                 ),
                 CustomButton(
-                  buttonText: 'Emoji Quiz',
+                  buttonText: 'Most likely to',
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => EmojiQuiz()),
+                      MaterialPageRoute(
+                          builder: (context) => MostLikelyToPage()),
                     );
                   },
                 ),
