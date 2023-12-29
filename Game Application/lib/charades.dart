@@ -119,6 +119,7 @@ class _CharadesPageState extends State<CharadesPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Charades'),
+        backgroundColor: Colors.deepPurple[300],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -6,6 +6,8 @@ import 'truth_or_dare.dart';
 import 'two_truths_one_lie.dart';
 import 'emoji_quiz.dart';
 
+import 'trivia_questions.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

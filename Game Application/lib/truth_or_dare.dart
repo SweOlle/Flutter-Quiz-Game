@@ -37,8 +37,9 @@ class _TruthOrDarePageState extends State<TruthOrDarePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Truth or Dare'),
+        backgroundColor: Colors.deepPurple[300],
       ),
+      backgroundColor: Colors.deepPurple[300],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
