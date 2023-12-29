@@ -19,101 +19,126 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[300],
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 3,
-            alignment: Alignment.center,
-            child: const Text(
-              'Party Game',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 46.0,
-                fontWeight: FontWeight.bold,
+        backgroundColor: Colors.deepPurple[300],
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.purple, Colors.blue],
+            ),
+          ),
+          child: Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height / 3,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Party Game',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 46.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 200, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TriviaPage()),
+                          );
+                        },
+                        child: Text(
+                          'Trivia Quiz',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 200, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CharadesPage()),
+                          );
+                        },
+                        child: Text(
+                          'Charades',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 200, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TruthOrDarePage()),
+                          );
+                        },
+                        child: Text(
+                          'Truth or Dare',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 200, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WouldYouRatherPage()),
+                          );
+                        },
+                        child: Text(
+                          'Would You Rather?',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 200, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MostLikelyToPage()),
+                          );
+                        },
+                        child: Text(
+                          'Most Likely To',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton(
-                  buttonText: 'Trivia Quiz',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => TriviaPage()),
-                    );
-                  },
-                ),
-                CustomButton(
-                  buttonText: 'Charades',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => CharadesPage()),
-                    );
-                  },
-                ),
-                CustomButton(
-                  buttonText: 'Truth or Dare',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => TruthOrDarePage()),
-                    );
-                  },
-                ),
-                CustomButton(
-                  buttonText: 'Would You Rather?',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => WouldYouRatherPage()),
-                    );
-                  },
-                ),
-                CustomButton(
-                  buttonText: 'Most Likely To',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MostLikelyToPage()),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
-class CustomButton extends StatelessWidget {
-  final String buttonText;
-  final VoidCallback onPressed;
-
-  const CustomButton({
-    required this.buttonText,
-    required this.onPressed,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60.0,
-      width: 300.0,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(buttonText),
-      ),
-    );
-  }
-}
+/*
+decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Colors.purple, Colors.blue])),
+                    */
