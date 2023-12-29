@@ -149,7 +149,12 @@ List<TriviaQuestion> sportQuestions = [
   TriviaQuestion(
     question:
         'Who holds the record for the most goals scored in FIFA World Cup history?',
-    options: ['Lionel Messi', 'Pele', 'Cristiano Ronaldo', 'Diego Maradona'],
+    options: [
+      'Lionel Messi',
+      'Miroslav Klose',
+      'Cristiano Ronaldo',
+      'Diego Maradona'
+    ],
     correctAnswer: 'Miroslav Klose',
   ),
 

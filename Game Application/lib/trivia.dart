@@ -82,7 +82,7 @@ class _TriviaPageState extends State<TriviaPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Quiz Completed'),
-          content: Text('Your Score: $score'),
+          content: Text('Your Score: $score / $currentQuestionIndex'),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -108,6 +108,7 @@ class _TriviaPageState extends State<TriviaPage> {
     setState(() {
       currentQuestionIndex = 0;
       score = 0;
+      questions.shuffle();
     });
     _showQuestion(context); // Start the quiz with the next question
   }
@@ -133,6 +134,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('Geography');
                 },
@@ -144,6 +150,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('History');
                 },
@@ -155,6 +166,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('Sport');
                 },
@@ -166,6 +182,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('Cinema');
                 },
@@ -177,6 +198,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('Literature');
                 },
@@ -188,6 +214,11 @@ class _TriviaPageState extends State<TriviaPage> {
               width: 200, // Adjust the width as needed
               height: 50, // Adjust the height as needed
               child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)))),
                 onPressed: () {
                   _startQuiz('Food');
                 },
@@ -216,7 +247,10 @@ class QuestionScreen extends StatefulWidget {
     required this.options,
     required this.correctAnswer,
     required this.onAnswerSelected,
-  });
+  }) {
+    // Shuffle the options when the question is created
+    options.shuffle();
+  }
 
   @override
   _QuestionScreenState createState() => _QuestionScreenState();
@@ -282,6 +316,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
                               return Colors.blue;
                             }
                           }(),
+                        ).merge(
+                          ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(color: Colors.black)))),
                         ),
                         child: Text(option),
                       ),

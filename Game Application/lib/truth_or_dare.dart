@@ -57,22 +57,36 @@ class _TruthOrDarePageState extends State<TruthOrDarePage> {
                   onPressed: () {
                     _getTruth();
                   },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                    textStyle: TextStyle(fontSize: 18),
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side: BorderSide(color: Colors.black)))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      'Get Truth',
+                      style: TextStyle(fontSize: 18.0),
+                    ),
                   ),
-                  child: Text('Get Truth'),
                 ),
                 SizedBox(width: 20.0),
                 ElevatedButton(
                   onPressed: () {
                     _getDare();
                   },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                    textStyle: TextStyle(fontSize: 18),
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side: BorderSide(color: Colors.black)))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      'Get Dare',
+                      style: TextStyle(fontSize: 18.0),
+                    ),
                   ),
-                  child: Text('Get Dare'),
                 ),
               ],
             ),

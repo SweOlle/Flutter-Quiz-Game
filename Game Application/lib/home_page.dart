@@ -6,8 +6,6 @@ import 'truth_or_dare.dart';
 import 'would_you_rather.dart';
 import 'most_likely_to.dart';
 
-import 'trivia_data.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -50,6 +48,12 @@ class _HomePageState extends State<HomePage> {
                       width: 200, // Adjust the width as needed
                       height: 50, // Adjust the height as needed
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -66,6 +70,12 @@ class _HomePageState extends State<HomePage> {
                       width: 200, // Adjust the width as needed
                       height: 50, // Adjust the height as needed
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -82,6 +92,12 @@ class _HomePageState extends State<HomePage> {
                       width: 200, // Adjust the width as needed
                       height: 50, // Adjust the height as needed
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -98,6 +114,12 @@ class _HomePageState extends State<HomePage> {
                       width: 200, // Adjust the width as needed
                       height: 50, // Adjust the height as needed
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -114,6 +136,12 @@ class _HomePageState extends State<HomePage> {
                       width: 200, // Adjust the width as needed
                       height: 50, // Adjust the height as needed
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                         onPressed: () {
                           Navigator.push(
                             context,

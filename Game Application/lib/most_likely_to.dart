@@ -66,6 +66,12 @@ class _MostLikelyToPageState extends State<MostLikelyToPage> {
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                     onPressed: () {
                       _generateSentence();
                     },
@@ -87,6 +93,12 @@ class _MostLikelyToPageState extends State<MostLikelyToPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(color: Colors.black)))),
                           onPressed: () {
                             _nextSentence();
                           },

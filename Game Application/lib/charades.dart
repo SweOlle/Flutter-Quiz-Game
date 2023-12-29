@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'charades_data.dart';
+import 'components/pushable_button.dart';
 
 class CharadesPage extends StatefulWidget {
   @override
@@ -138,6 +139,12 @@ class _CharadesPageState extends State<CharadesPage> {
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                     onPressed: () {
                       _generateWord();
                     },
@@ -166,9 +173,14 @@ class _CharadesPageState extends State<CharadesPage> {
                           onPressed: () {
                             _skipWord();
                           },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.red,
-                          ),
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(Colors.red),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(color: Colors.black)))),
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Text(
@@ -178,12 +190,17 @@ class _CharadesPageState extends State<CharadesPage> {
                           ),
                         ),
                         ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.green),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(color: Colors.black)))),
                           onPressed: () {
                             _addPointAndSkipWord();
                           },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.green,
-                          ),
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Text(

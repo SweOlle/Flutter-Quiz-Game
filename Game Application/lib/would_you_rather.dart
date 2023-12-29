@@ -88,6 +88,12 @@ class _WouldYouRatherPageState extends State<WouldYouRatherPage> {
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: BorderSide(color: Colors.black)))),
                     onPressed: () {
                       _generateWouldYouRather();
                     },
@@ -109,6 +115,12 @@ class _WouldYouRatherPageState extends State<WouldYouRatherPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(color: Colors.black)))),
                           onPressed: () {
                             _nextWouldYouRather();
                           },
